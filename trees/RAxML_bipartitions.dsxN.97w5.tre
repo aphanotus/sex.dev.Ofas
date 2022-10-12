@@ -1,0 +1,198 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=97;
+	taxlabels
+	Acyrthosiphon_pisum_XP_001949339
+	Acyrthosiphon_pisum_XP_001950330
+	Aedes_aegypti_ABD96571
+	Anastrepha_obliqua_AAY25166
+	Anopheles_gambiae_AAZ78363
+	Antheraea_assamensis_ADL40848
+	Artemia_franciscana_AWC26108
+	Artemia_franciscana_AWC26110
+	Atelura_formicaria_GAYJ01004010
+	Athalia_rosae_XP_020710430
+	Bactrocera_dorsalis_ACN24617
+	Bactrocera_oleae_CAD67986
+	Baetis_sp_AD2013_GATU01002143
+	Bemisia_tabaci_AWC26116
+	Bemisia_tabaci_AWC26119
+	Bicyclus_anynana_XP_023954880
+	Blattella_germanica_QGB21104
+	Boisea_trivittata_TR25597_c0_g1_i1
+	Bombyx_mori_NP_001036871
+	Centruroides_sculpturatus_XP_023240902
+	Ceratitis_capitata_CAD6995627
+	'Cimex_lectularius_XP_014241968.1'
+	'Cimex_lectularius_XP_014246101.1'
+	Cimex_lectularius_XP_014253610
+	Cloeon_dipterum_CAB3378996
+	Corydalus_cornutus_GATG01001294
+	Cryptotermes_secundus_XP_023717075
+	Ctenocephalides_felis_XP_026469488
+	Culex_quinquefasciatus_AJB28478
+	Danaus_plexippus_OWR54143
+	Daphnia_magna_KZS18467
+	Daphnia_pulex_EFX84867
+	Dendroctonus_frontalis_GAFI01011207
+	Drosophila_ananassae_XP_014766033
+	Drosophila_biarmipes_XP_016954042
+	Drosophila_erecta_XP_026836830
+	Drosophila_guanche_XP_034138145
+	Drosophila_mauritiana_XP_033162859
+	Drosophila_melanogaster_AAF54169
+	Drosophila_miranda_XP_017142875
+	Drosophila_persimilis_XP_026839942
+	Drosophila_pseudoobscura_XP_033235920
+	Drosophila_sechellia_XP_002038750
+	Drosophila_serrata_XP_020809843
+	Drosophila_suzukii_XP_036672758
+	Drosophila_virilis_XP_032289549
+	Drosophila_willistoni_XP_023035845
+	Ephemera_danica_GAUK01006643
+	Ephemera_danica_KAF4518127
+	Folsomia_candida_OXA63464
+	Forficula_auricularia_GAYQ01017360
+	Frankliniella_occidentalis_FOCC010385
+	Frankliniella_occidentalis_FOCC012640
+	Gerris_buenoi_GBUE000192
+	Halyomorpha_halys_XP_014275563
+	Halyomorpha_halys_XP_014294160
+	Homalodisca_vitripennis_HVIT012335RA
+	Homalodisca_vitripennis_HVIT026640RA
+	Isonychia_bicolor_GAXA01111429
+	Ixodes_scapularis_EEC09721
+	Jadera_haematoloma_TR109469_c0_g2_i1
+	Jadera_haematoloma_TR199998_c0_g1_i3
+	Jadera_haematoloma_TR265400_c0_g2_i1
+	Jadera_sanguinolenta_TR56388_c0_g2_i1
+	Liposcelis_bostrychophila_GAYV01012131
+	Manduca_sexta_XP_037293923
+	Mantis_religiosa_GASW01220805
+	Mantis_religiosa_GASW01222710
+	Musca_domestica_AAR23812
+	Nilaparvata_lugens_dsx_AWJ25057
+	Nilaparvata_lugens_dsx_like_1_AWJ25060
+	'Nilaparvata_lugens_dsx_like_2_AWJ25059.1'
+	'Nilaparvata_lugens_dsx_like_3_AWJ25058.1'
+	Oncopeltus_fasciatus_dsx[&!color=#ff8000]
+	Oncopeltus_fasciatus_dmrt99B[&!color=#ff8000]
+	Oncopeltus_fasciatus_dmrt93B[&!color=#ff8000]
+	Orchesella_cincta_ODM99375
+	Osmia_cornuta_GAGH01066955
+	Pachypsylla_venusta_PVEN005086
+	Parasteatoda_tepidariorum_XP_015926670
+	Photinus_pyralis_KAB0803522
+	Pieris_rapae_BBA83992
+	Plutella_xylostella_XP_037963445
+	Portunus_trituberculatus_MPC89876
+	Ramulus_artemis_GAWE01101272
+	Rhagoletis_pomonella_XP_036337134
+	Rhagoletis_pomonella_XP_036337142
+	Scaptodrosophila_lebanonensis_XP_030374811
+	Thermobia_domestica_GASN01031735
+	Tribolium_castaneum_NP_001345540
+	Tricholepidion_gertschi_GASO01256612
+	Trichoplusia_ni_XP_026734616
+	Vanessa_tameamea_XP_026489726
+	Varroa_destructor_XP_022672986
+	Xanthostigma_xanthostigma_GAUI01017467
+	Zeugodacus_cucurbitae_XP_028899689
+	Zootermopsis_nevadensis_XP_021919194
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (Thermobia_domestica_GASN01031735:1.0E-6,(Atelura_formicaria_GAYJ01004010:0.146817,(Ephemera_danica_GAUK01006643:0.20514,(Isonychia_bicolor_GAXA01111429:0.199818,(Baetis_sp_AD2013_GATU01002143:0.583497,(((Artemia_franciscana_AWC26110:1.646886,(Cloeon_dipterum_CAB3378996:0.812109,Ixodes_scapularis_EEC09721:0.926469)[&bs=40]:0.368885)[&bs=43]:0.205942,((Oncopeltus_fasciatus_dmrt99B:1.0E-6,(Jadera_haematoloma_TR109469_c0_g2_i1:1.0E-6,(('Nilaparvata_lugens_dsx_like_3_AWJ25058.1':1.058548,((('Cimex_lectularius_XP_014241968.1':0.328881,((Oncopeltus_fasciatus_dmrt93B:0.02008,Jadera_haematoloma_TR265400_c0_g2_i1:0.06793)[&bs=60]:0.04687,Halyomorpha_halys_XP_014294160:0.018004)[&bs=75]:0.107591)[&bs=94]:0.268666,'Nilaparvata_lugens_dsx_like_2_AWJ25059.1':0.319918)[&bs=45]:1.0E-6,(Acyrthosiphon_pisum_XP_001950330:0.282723,(Frankliniella_occidentalis_FOCC012640:0.043804,(Pachypsylla_venusta_PVEN005086:0.151794,Bemisia_tabaci_AWC26119:0.088475)[&bs=58]:0.075592)[&bs=42]:0.097712)[&bs=82]:0.236447)[&bs=98]:0.830512)[&bs=83,!rotate=false]:0.741971,(((Zootermopsis_nevadensis_XP_021919194:0.138912,(Frankliniella_occidentalis_FOCC010385:0.154438,(Gerris_buenoi_GBUE000192:0.068694,((((Daphnia_pulex_EFX84867:1.0E-6,Daphnia_magna_KZS18467:0.053967)[&bs=100]:0.225678,Artemia_franciscana_AWC26108:0.478318)[&bs=79]:0.260086,Acyrthosiphon_pisum_XP_001949339:0.068165)[&bs=27]:0.04694,((Parasteatoda_tepidariorum_XP_015926670:0.133897,Centruroides_sculpturatus_XP_023240902:0.110501)[&bs=100]:0.562078,(Folsomia_candida_OXA63464:0.191471,Orchesella_cincta_ODM99375:0.100994)[&bs=90]:0.102442)[&bs=57]:0.17941)[&bs=1]:1.0E-6)[&bs=16]:0.07585)[&bs=18]:0.045148)[&bs=47]:0.155926,'Cimex_lectularius_XP_014246101.1':1.0E-6)[&bs=31]:0.032314,Halyomorpha_halys_XP_014275563:1.0E-6)[&bs=4,!rotate=true]:1.0E-6)[&bs=5,!rotate=true]:0.087633)[&bs=3]:0.029107)[&bs=99]:1.592023,(Varroa_destructor_XP_022672986:0.825226,Bemisia_tabaci_AWC26116:1.349735)[&bs=95]:0.734793)[&bs=32]:0.341214)[&bs=16]:0.230842,(Ephemera_danica_KAF4518127:0.990212,((Xanthostigma_xanthostigma_GAUI01017467:0.285299,Corydalus_cornutus_GATG01001294:0.368614)[&bs=88]:0.412608,((Blattella_germanica_QGB21104:0.557884,(((Portunus_trituberculatus_MPC89876:1.799461,((Homalodisca_vitripennis_HVIT012335RA:0.618354,Homalodisca_vitripennis_HVIT026640RA:0.435551)[&bs=87]:0.78614,((((Jadera_haematoloma_TR199998_c0_g1_i3:1.0E-6,Jadera_sanguinolenta_TR56388_c0_g2_i1:0.013372)[&bs=88]:0.00696,(Boisea_trivittata_TR25597_c0_g1_i1:0.022303,Oncopeltus_fasciatus_dsx:2.363691)[&bs=43]:0.100386)[&bs=100]:3.231678,Cimex_lectularius_XP_014253610:2.513896)[&bs=52]:1.438971,(Nilaparvata_lugens_dsx_AWJ25057:1.675025,Nilaparvata_lugens_dsx_like_1_AWJ25060:1.36148)[&bs=17]:0.173079)[&bs=9]:0.174891)[&bs=15]:0.522674)[&bs=36]:0.820067,Liposcelis_bostrychophila_GAYV01012131:0.918932)[&bs=2]:0.363559,(((Forficula_auricularia_GAYQ01017360:0.859997,((Anopheles_gambiae_AAZ78363:0.042415,(Aedes_aegypti_ABD96571:0.17233,Culex_quinquefasciatus_AJB28478:0.067463)[&bs=80]:0.067507)[&bs=97]:0.425635,(Drosophila_willistoni_XP_023035845:0.110662,(((((Drosophila_persimilis_XP_026839942:1.0E-6,Drosophila_guanche_XP_034138145:1.0E-6)[&bs=22]:1.0E-6,(Drosophila_pseudoobscura_XP_033235920:1.0E-6,Drosophila_miranda_XP_017142875:1.0E-6)[&bs=19]:1.0E-6)[&bs=90]:0.026986,(Drosophila_serrata_XP_020809843:1.0E-6,((Drosophila_melanogaster_AAF54169:1.0E-6,(Drosophila_mauritiana_XP_033162859:1.0E-6,(Drosophila_sechellia_XP_002038750:1.0E-6,Drosophila_erecta_XP_026836830:1.0E-6)[&bs=26]:1.0E-6)[&bs=78]:1.0E-6)[&bs=92]:0.039522,((((Ceratitis_capitata_CAD6995627:0.044291,((Bactrocera_dorsalis_ACN24617:0.010265,Bactrocera_oleae_CAD67986:1.0E-6)[&bs=22]:1.0E-6,(Musca_domestica_AAR23812:0.187554,Zeugodacus_cucurbitae_XP_028899689:1.0E-6)[&bs=41]:0.020474)[&bs=31]:0.009634)[&bs=39]:0.020173,(Anastrepha_obliqua_AAY25166:1.0E-6,(Rhagoletis_pomonella_XP_036337134:1.0E-6,Rhagoletis_pomonella_XP_036337142:1.0E-6)[&bs=78]:0.010087)[&bs=39]:1.0E-6)[&bs=60]:0.122072,Drosophila_biarmipes_XP_016954042:0.004497)[&bs=9]:0.015533,Drosophila_suzukii_XP_036672758:1.0E-6)[&bs=7]:0.012433)[&bs=5]:0.017962)[&bs=3]:0.012286)[&bs=4]:0.028778,(Scaptodrosophila_lebanonensis_XP_030374811:0.043092,Drosophila_ananassae_XP_014766033:1.0E-6)[&bs=60]:0.034695)[&bs=6]:0.014872,Drosophila_virilis_XP_032289549:0.042087)[&bs=7]:0.017016)[&bs=73]:0.266833)[&bs=54]:0.109989)[&bs=10]:0.182953,((Osmia_cornuta_GAGH01066955:0.560418,Athalia_rosae_XP_020710430:0.293148)[&bs=91]:0.431408,((Danaus_plexippus_OWR54143:0.003044,((((Trichoplusia_ni_XP_026734616:0.076646,Bombyx_mori_NP_001036871:0.114998)[&bs=40]:0.028589,Vanessa_tameamea_XP_026489726:0.067043)[&bs=8]:1.0E-6,Manduca_sexta_XP_037293923:0.064931)[&bs=32]:0.012974,((Antheraea_assamensis_ADL40848:0.102326,(Bicyclus_anynana_XP_023954880:0.095383,Plutella_xylostella_XP_037963445:0.12111)[&bs=41]:0.036365)[&bs=26]:0.020898,Pieris_rapae_BBA83992:0.0363)[&bs=40]:0.043811)[&bs=32]:0.034762)[&bs=97]:0.369192,Ctenocephalides_felis_XP_026469488:0.626697)[&bs=51]:0.130672)[&bs=40]:0.236776)[&bs=2]:0.054506,(Tribolium_castaneum_NP_001345540:0.068812,(Photinus_pyralis_KAB0803522:0.101848,Dendroctonus_frontalis_GAFI01011207:0.421347)[&bs=36]:0.12852)[&bs=97]:0.477608)[&bs=5]:0.089963)[&bs=2]:0.203035)[&bs=1]:0.202865,(((Cryptotermes_secundus_XP_023717075:1.590994,Mantis_religiosa_GASW01222710:0.096546)[&bs=6]:0.075046,Mantis_religiosa_GASW01220805:0.514017)[&bs=22]:0.266168,Ramulus_artemis_GAWE01101272:0.375888)[&bs=9]:0.185774)[&bs=1]:0.11062)[&bs=1]:0.130465)[&bs=1]:0.182472)[&bs=90]:1.330994)[&bs=82]:0.606654)[&bs=68]:0.206428)[&bs=99]:0.62068)[&bs=32]:1.0E-6,Tricholepidion_gertschi_GASO01256612:0.193347);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="Calibri";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="bs";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bs";
+	set nodeLabels.fontName="Calibri";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="Calibri";
+	set tipLabels.fontSize=14;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
