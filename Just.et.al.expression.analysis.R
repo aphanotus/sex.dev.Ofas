@@ -230,6 +230,9 @@ exp.heatmap <- ggplot(q.means, aes(x=tissue, y=target, z=mean.exp)) +
 
 exp.heatmap
 
+ggsave('plots/expression.heatmap.png', exp.heatmap, scale=1.25, width=9, height=3.125)
+ggsave('plots/expression.heatmap.pdf', exp.heatmap, scale=1.25, width=9, height=3.125)
+
 # Distribution of fourth instar gene expression
 
 fourth.instar.expression.histograms <- q.long %>% 
@@ -271,41 +274,27 @@ q.stats <- q.long %>%
 
 {
   sink(file = "expression.wrst.csv")
-  cat("target\tstage\ttissue\tf\tm\tW\tp\n")
+  cat("target,stage,tissue,f,m,W,p\n")
   unlist(lapply(targets.of.interest, function(target.i) {
     unlist(lapply(unique(q.stats$stage.tissue), function(stage.tissue.i) {
       dat.i <- q.stats %>% filter(target == target.i, stage.tissue == stage.tissue.i)
       if (dim(dat.i)[1]>4) {
-        cat(target.i,"\t",dat.i$stage[1],"\t",dat.i$tissue[1],"\t",paste0(c(by(dat.i$sex,dat.i$sex,length)), collapse = "\t"),"\t")
+        cat(paste0(target.i,",",dat.i$stage[1],",",dat.i$tissue[1],",",paste0(c(by(dat.i$sex,dat.i$sex,length)), collapse = ","),","))
         wrst.i <- wilcox.test(value ~ sex, data = dat.i)
-        cat(wrst.i$statistic,"\t",wrst.i$p.value,"\n")
+        cat(wrst.i$statistic,",",wrst.i$p.value,"\n")
       }
     }))
   }))
   sink()
 }
 
-expression.wrst <- read.delim("expression.wrst.csv")
+expression.wrst <- read.csv("expression.wrst.csv")
 
 expression.wrst$padj <- expression.wrst %>% 
   group_by(target) %>% 
   summarise(padj = p.adjust(p, method = "fdr", n = n())) %>% 
   pull(padj)
 
-expression.wrst$signif <- sigstar(expression.wrst$p)
+write.csv(expression.wrst, "expression.wrst.csv", quote = FALSE, row.names = FALSE)
 
-# Update the heat map with stats
-heatmap.text <- data.frame(
-  target = c("dsx6","dsx6","ix","ix","fru","fru"),
-  tissue = c("testes","ovaries","genital\ncapsule","ovipositor","sternites","sternites"),
-  stage =  c("adult, day 1","adult, day 1","adult, day 1","adult, day 1"," instar 5, day 1"," instar 5, day 1"),
-  sex =    c("m","f","m","f","m","f"),
-  label =  rep("*",6),
-  mean.exp = rep(1,6)
-)
 
-exp.heatmap <- exp.heatmap + 
-  geom_text(data = heatmap.text, aes(label = label), size = 8, color = "gray95")
-
-ggsave('plots/expression.heatmap.png', exp.heatmap, scale=1.25, width=9, height=3.125)
-ggsave('plots/expression.heatmap.pdf', exp.heatmap, scale=1.25, width=9, height=3.125)
