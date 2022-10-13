@@ -148,11 +148,10 @@ write_csv(std.q,'standardized.tissue.specific.expression.csv')
 ############
 
 colors.indicating.sex <- c(
-  juvenile = "#D6D4C7",  # "concrete"
+  juvenile = "#808076",  # "concrete"
   female   = "#ff9933",  # "neon carrot" or "deep saffron"
   male     = "#666699"   # "scampi" or "mostly desaturated dark blue"
 )
-names(colors.indicating.sex) <- c(" j","f","m")
 # scales::show_col(colors.indicating.sex)
 
 q.long <- std.q %>% 
@@ -178,16 +177,56 @@ q.long$target <- factor(
   )
 )
 
-expression.box.plots <- ggplot(q.long, aes(sex, value, color=sex)) +
-  theme_bw() + theme(legend.position="none") +
-  facet_grid(target ~ tissue, scales = 'free_x', space = 'free_x') +
+expression.box.plots <- q.long %>% 
+  filter(!grepl("dmrt",target)) %>% 
+  filter(!(instar == "L5" & sex == " j")) %>%
+  mutate(target = sub("dsx","dsx exon",target)) %>% 
+  mutate(sex = sub(" j","juvenile",sex)) %>% 
+  mutate(sex = sub("^f$","female",sex)) %>% 
+  mutate(sex = sub("^m$","male",sex)) %>% 
+  mutate(instar = sub("L"," instar ",instar)) %>% 
+  mutate(day    = sub("d","day ",day)) %>% 
+  mutate(stage = paste0(instar,"\n",day)) %>% 
+  ggplot(aes(sex, value, color=sex)) +
+  theme_bw() + 
+  theme(
+    legend.position="none",
+    panel.grid.minor = element_blank()
+  ) +
+  facet_grid(target ~ stage*tissue, scales = 'free_x', space = 'free_x') +
   geom_boxplot(outlier.shape = NA) +
-  geom_jitter(width = 0.25, size=2, alpha = 0.85) +
-  scale_color_manual(values = colors.indicating.sex)
+  geom_jitter(width = 0.25, size=2, alpha = 0.75) +
+  scale_color_manual(values = colors.indicating.sex) +
+  labs(y = "relative expression")
 # expression.box.plots
 
-ggsave("expression.box.plots.png", expression.box.plots, height = 11, width = 8.5, scale = 1)
-ggsave("expression.box.plots.pdf", expression.box.plots, height = 11, width = 8.5, scale = 1)
+ggsave("plots/expression.box.plots.png", expression.box.plots, height = 12, width = 14, scale = 1)
+ggsave("plots/expression.box.plots.pdf", expression.box.plots, height = 12, width = 14, scale = 1)
+
+# For DMRTs
+expression.dmrt.box.plots <- q.long %>% 
+  filter(grepl("dmrt",target)) %>% 
+  mutate(sex = sub(" j","juvenile",sex)) %>% 
+  mutate(sex = sub("^f$","female",sex)) %>% 
+  mutate(sex = sub("^m$","male",sex)) %>% 
+  mutate(instar = sub("L"," instar ",instar)) %>% 
+  mutate(day    = sub("d","day ",day)) %>% 
+  mutate(stage = paste0(instar,"\n",day)) %>% 
+  filter(!is.na(value)) %>% 
+  ggplot(aes(sex, value, color=sex)) +
+  theme_bw() + 
+  theme(
+    legend.position="none",
+    panel.grid.minor = element_blank()
+  ) +
+  facet_grid(target ~ stage*tissue, scales = 'free_x', space = 'free_x') +
+  geom_boxplot(outlier.shape = NA) +
+  geom_jitter(width = 0.25, size=2, alpha = 0.75) +
+  scale_color_manual(values = colors.indicating.sex) +
+  labs(y = "relative expression")
+
+ggsave("plots/expression.dmrt.box.plots.png", expression.dmrt.box.plots, height = 9, width = 6.5, scale = 1)
+ggsave("plots/expression.dmrt.box.plots.pdf", expression.dmrt.box.plots, height = 9, width = 6.5, scale = 1)
 
 
 # Heat map
